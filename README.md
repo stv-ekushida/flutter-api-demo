@@ -1,7 +1,7 @@
 # flutter_api_freezed
 
 ## アーキテクチャ
-view → ViewModel →　Repository →　DataSource →　Service
+View → ViewModel(riverpod) →　Repository →　DataSource →　Service(dio)
 
 ## パッケージ
 
