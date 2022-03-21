@@ -7,7 +7,7 @@ import 'package:flutter_zenn_api_freezed/services/api/api_service.dart';
 
 final usersRepositoryProvider = Provider.autoDispose(
   (ref) => UserRepository(
-    remoteRepository: UserRemoteRepository(api: APIService.instance),
+    remoteRepository: UserRemoteDataSource(api: APIService.instance),
   ),
 );
 

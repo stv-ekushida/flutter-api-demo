@@ -3,7 +3,7 @@ import 'package:flutter_zenn_api_freezed/models/user/user.dart';
 import 'package:flutter_zenn_api_freezed/services/api/api_error.dart';
 
 class UserRepository {
-  final UserRemoteRepository remoteRepository;
+  final UserRemoteDataSource remoteRepository;
 
   const UserRepository({
     required this.remoteRepository,

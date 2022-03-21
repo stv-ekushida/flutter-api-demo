@@ -3,10 +3,10 @@ import 'package:flutter_zenn_api_freezed/models/user/user.dart';
 import 'package:flutter_zenn_api_freezed/services/api/api_error.dart';
 import 'package:flutter_zenn_api_freezed/services/api/api_service.dart';
 
-class UserRemoteRepository implements UserDataSource {
+class UserRemoteDataSource implements UserDataSource {
   final APIService api;
 
-  const UserRemoteRepository({
+  const UserRemoteDataSource({
     required this.api,
   });
 
