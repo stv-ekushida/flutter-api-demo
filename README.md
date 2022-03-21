@@ -3,6 +3,9 @@
 ## アーキテクチャ
 View → ViewModel(riverpod) →　Repository →　DataSource →　Service(dio)
 
+## クラス構成
+UsersPage →　UsersViewModel(rivierpod) →　UserRepository →　UserRemoteDataSource(UserDataSource) →　APIService(dio)
+
 ## パッケージ
 
 ### dependencies:
