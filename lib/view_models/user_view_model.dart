@@ -1,13 +1,13 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:flutter_zenn_api_freezed/data_sources/user_datasource.dart';
+import 'package:flutter_zenn_api_freezed/data_sources/remote/user_remote_datasource.dart';
 import 'package:flutter_zenn_api_freezed/models/user/user.dart';
-import 'package:flutter_zenn_api_freezed/repositories/api/user_api_repository.dart';
+import 'package:flutter_zenn_api_freezed/repositories/user_repository.dart';
 import 'package:flutter_zenn_api_freezed/services/api/api_error.dart';
 import 'package:flutter_zenn_api_freezed/services/api/api_service.dart';
 
 final usersRepositoryProvider = Provider.autoDispose(
-  (ref) => UserAPIRepository(
-    api: APIService.instance,
+  (ref) => UserRepository(
+    remoteRepository: UserRemoteRepository(api: APIService.instance),
   ),
 );
 
@@ -25,9 +25,8 @@ class UsersViewModel extends StateNotifier<AsyncValue<List<User>>> {
     users();
   }
 
-  final UserDataSource repository;
+  final UserRepository repository;
 
-  /// ユーザ一覧
   void users() async {
     state = const AsyncValue.loading();
 
